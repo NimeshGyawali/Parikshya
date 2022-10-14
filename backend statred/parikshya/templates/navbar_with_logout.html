@@ -1,0 +1,70 @@
+{% load static %}
+<div class="pr_navbar_maincontainer">
+    <div class="pr_navbar_col1">
+        <div class="pr_navbar_col1_logo">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'image/Mask Group 16.png' %}" alt="websitelogo">
+            </a>
+        </div>
+        <div class="pr_navbar_col3_item3_responsive">
+            <a href="{% url 'profile_page' %}">
+                <div class="pr_navbar_col3_item3_name_responsive">
+                    <h3>RP</h3>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    <div class="pr_navbar_col2">
+        <div class="search_container">
+            <i class="fa fa-search"></i>
+            <input type="text" placeholder="Search" name="search">
+        </div>
+    </div>
+    <div class="pr_navbar_col3">
+        <div class="pr_navbar_col3_item1">
+            <a href="{% url 'mock_test_page' %}">
+                <span>
+                    MOCK TEST
+                </span>
+            </a>
+        </div>
+
+        <div class="pr_navbar_col3_item3">
+            <a href="{% url 'profile_page' %}">
+                <div class="pr_navbar_col3_item3_name">
+                    <h3>RP</h3>
+                </div>
+            </a>
+        </div>
+        <div class=" pr_navbar_col3_item4">
+            <a href="{% url 'logout' %}">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>
+                        LOG OUT
+                     </span>
+            </a>
+        </div>
+
+    </div>
+    <div class="pr_navbar_ham">
+        <div class="pr_navbar_ham_rows" onclick="myFunction()">
+            <div class="pr_navbar_hamburger"></div>
+            <div class="pr_navbar_hamburger"></div>
+            <div class="pr_navbar_hamburger"></div>
+        </div>
+        <div class="pr_navbar_ham_contents" id="navbar_ham_myDIV">
+            <li>
+                <a href="{% url 'mock_test_page' %}">
+                    MOCK TEST
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'logout' %}">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    LOGOUT
+                </a>
+            </li>
+        </div>
+    </div>
+</div>

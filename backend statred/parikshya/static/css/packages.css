@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0%;
+}
+a{
+    text-decoration: none;
+}
+/* packages and get started css started  */
+
+.pr_packages_content_heading {
+    text-align: center;
+    font-size: 28px;
+}
+
+.pr_packages_content_heading_hr {
+    background-color: rgb(0, 0, 0);
+    width: 171px;
+    height: 10px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.pr_packages_content {
+    padding: 15px 0px;
+    width:100%;
+    height:535px;
+}
+
+.pr_packages_content_boxes_box {
+    background-color: #9B9B9B;
+    width: 100%;
+    height: 81%;
+    border-radius: 17%;
+
+    cursor: pointer;
+}
+
+.pr_packages_content_boxes_box:hover {
+    background-color: #BEE9E6;
+}
+
+.pr_packages_content_boxes_box_img {
+    height: 80%;
+}
+
+.pr_packages_content_boxes_box_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 17%;
+}
+
+.pr_packages_content_boxes_box_text {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 12px;
+    height:20%;
+}
+
+.pr_packages_content_boxes {
+  display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    justify-content: space-evenly;
+    margin:30px 50px;
+    height:525px;
+}
+
+.pr_packages_get_started {
+    background: #000000;
+
+    height: 200px;
+    width:100%;
+}
+
+.pr_packages_get_started_text {
+    padding: 45px;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.pr_packages_get_started_text h3 {
+    line-height: 60px;
+    font-size: xx-large;
+     color: #fba638d2;
+}
+
+.pr_package_buy_now {
+    color: white !important;
+    cursor: pointer;
+}
+.pr_package_buy_now span{
+color:white;
+font-weight: bold;
+font-size:xx-large;
+}
+.pr_package_buy_now span:hover{
+color: green;
+}
+
+
+/* packages and get started css finished  */
+
+
+/* packages responsive css */
+@media only screen and (max-width: 690px) {
+    .pr_packages_content_boxes {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+    }
+    .pr_packages_content_boxes_box_text {
+        font-size: 23px;
+        margin: 2px 0px;
+        padding: 3px;
+    }
+}
+/* packages Responsive css finished  */

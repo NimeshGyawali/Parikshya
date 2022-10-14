@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/admin_panel/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_panel/top.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_panel/course.css' %}">
+    <title>course</title>
+</head>
+<body>
+{% include '../admin_panel/top.html' %}
+{% include '../admin_panel/sidebar.html' %}
+<div class="pr_ap_course_main">
+    <div class="pr_ap_course_top">
+        <div class="pr_ap_course_top_left">
+            <p>Courses</p>
+        </div>
+        <div class="pr_ap_top_null"></div>
+        <div class="pr_ap_course_top_right">
+            <div class="pr_ap_course_top_right_main">
+                <a href="{% url 'main_course' %}">
+                    <button class="pr_ap_main_coursebtn">Main Courses</button>
+                </a>
+            </div>
+            <div class="pr_ap_course_top_right_add">
+                <a href="{% url 'add_course' %}">
+                    <button class="pr_ap_course_top_right_button">Add New Course</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="pr_ap_course_table">
+
+        <table id="courses">
+            <tr>
+                <th class="pr_ap_course_name">Name</th>
+                <th class="pr_ap_course_que">Question Sets</th>
+                <th class="pr_ap_course_price">Price</th>
+                <th class="pr_ap_course_action">Action</th>
+            </tr>
+            {% for i in course_query %}
+            <tr>
+                <td>{{i.Course_Name}}</td>
+                <td>{{i.question_sets}}</td>
+                <td>{{i.Course_price}}</td>
+                <td class="pr_ap_course_action_td">
+                    <a href="#">
+                        <button class="pr_ap_mainbtn">Main</button>
+                    </a>
+                    <a href="{% url 'edit_course' %}">
+                        <button class="pr_ap_editbtn">Edit</button>
+                    </a>
+                        <button class="pr_ap_deletebtn">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+    <title>Login and Register</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-free-6.0.0-beta3-web/css/all.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</head>
+<body>
+{% include 'header.html' %}
+
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form method="POST" action="{% url 'registration_post' %}">
+            {% csrf_token %}
+            <h1>Register</h1>
+
+            <div class="input-group mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <p>Username</p>
+                </div>
+                {{form.username}}
+            </div>
+            <div class="input-group mb-2">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+                    <p>Email</p>
+                </div>
+                {{form.email}}
+            </div>
+            <div class="input-group mb-2">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    <p>Password</p>
+                </div>
+                {{form.password1}}
+            </div>
+            <div class="input-group mb-2">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    <p>Retype-Password</p>
+                </div>
+                {{form.password2}}
+            </div>
+            <div class="d-flex justify-content-center mt-3 login_container">
+                <input class="btn login_btn" type="submit" value="Register Account">
+            </div>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form method="POST" action="{% url 'login_post' %}">
+            {% csrf_token %}
+            <h1>Login</h1>
+            <div class="input-group mb-3">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    <p>Username</p>
+                </div>
+                {{form.username}}
+            </div>
+            <div class="input-group mb-2">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    <p>Password</p>
+                </div>
+                {{form.password1}}
+            </div>
+            <a class="Forgot_pw" href="#">Forgot Your Password?</a>
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+
+            <div class="d-flex justify-content-center mt-3 login_container">
+                <input class="btn login_btn" type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn">Login</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your details and start journey with us</p>
+                <button class="ghost" id="signUp">Register</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+	const signUpButton = document.getElementById('signUp');
+	const signInButton = document.getElementById('signIn');
+	const container = document.getElementById('container');
+
+	signUpButton.addEventListener('click', () => {
+		container.classList.add("right-panel-active");
+	});
+	signInButton.addEventListener('click', () => {
+		container.classList.remove("right-panel-active");
+	});
+
+</script>
+
+
+</body>
+</html>

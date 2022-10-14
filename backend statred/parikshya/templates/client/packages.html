@@ -1,0 +1,35 @@
+<!-- packages and get started html Started -->
+{% load static %}
+<div class="pr_packages_content">
+
+    <div class="pr_packages_content_heading">
+
+        <h3>COURSES</h3>
+        <div class="pr_packages_content_heading_hr"></div>
+    </div>
+    <div class="pr_packages_content_boxes">
+        {% for i in main_section %}
+        <div class="pr_packages_content_boxes_box">
+            <div class="pr_packages_content_boxes_box_img">
+                <img src="{{i.photo_img.url}}" alt="">
+            </div>
+            <div class="pr_packages_content_boxes_box_text">
+                <p>{{i.Course_Name}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="pr_packages_get_started">
+    <div class="pr_packages_get_started_text">
+        <h3>START YOUR JOURNEY TODAY.</h3>
+        <div class="pr_package_buy_now">
+            <a href="{% url 'purchasenow_page' %}">
+                <span> ENROLL NOW
+                    <i class="fa-solid fa-book"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- packages and get started html finished -->
